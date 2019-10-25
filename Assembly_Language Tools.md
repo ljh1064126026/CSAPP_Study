@@ -24,10 +24,12 @@
 
 ### 调试器gdb使用入门
 
-> gdb内部的常用操作查阅帮助手册   
-> GNU调试器 gdb 在gdb包中
+> gdb内部的常用操作查阅帮助手册     
+> GNU调试器 gdb 在gdb包中  
 
 * `gdb executable_name`:对可执行文件进行调试
+> 执行带有`-g`使可执行文件附带调试信息的操作 会使可执行文件的体积变大  
+> `-g`在`as`中也可以使用  
 
 ### 反汇编工具objdump使用入门
 > GNU反汇编器 objdump 在binutils包中
