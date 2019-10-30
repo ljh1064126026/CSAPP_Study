@@ -1,6 +1,7 @@
 # CSAPP_2 INTRO
 
 * Big endian and little endian 只考虑 **立即数** 的存放
+* 当unsigned和signed一同运算时，signed自动转换为unsigned
 
 ## 内存对齐机制
 ```
@@ -30,3 +31,5 @@ int main(int argc, char const *argv[])
 * 0~9:48~57
 * A~Z:65~90
 * a~z:97~122
+
+
