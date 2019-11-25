@@ -1,8 +1,21 @@
 # Assembly_Language Accessing Info
 
 * 变址访问内存方式：`offset(base ,index ,scale_factor) == offset+base+index*scale_factor`
+* When performing a cast that involves both a **size change** and a **change of 'signedness'** in C, the operation should **change the size first**
+> unsigned and signed(two's complement)本质上只是计算机表达数字的方式不同 在二进制存储上没有区别 因此在进行两者转换时不应当改变高位（符号位等）  
+> 本质上包括**size change** and a **change of 'signedness'** 其实只有**size change**(extend) 后者其实由系统自动表达完成
 
-## mov and lea
+## The size of data
+1. `b`:1 byte 8 bits
+2. `w`:2 bytes 16 bits
+3. `l`:4 bytes 32 bits
+4. `q`:8 bytes 64 bits
+
+## Two conventions when generate values into registers
+1. Those that generate 1 or 2 bytes leave the remaining bytes unchanged
+2. ..generate 4 bytes leave the upper 4 bytes of the register to **zero**
+
+## mov, lea, and 变址访问
 > movl a ,%eax # movl the **value** of *a* to the register %eax  
 > leal a ,%eax # movl the address of *a* to the register %eax
 
@@ -32,10 +45,14 @@ _start:
 * value是一个标签 lea本质上`load effective address`，故会取value的地址作为操作数
 
 * 为了便于理解 内存变址访问 `offset(base ,index ,scale_factor)`也可以理解为`base(offset ,index ,scale_factor)`
+* `offset(base ,index ,scale_factor)=*(offset+base+index*scale_factor)`
+> `lea`is an exception
 
 ## The 'x' of movx
 * If the destination is a register, it must match the 'x' of movx(such as 'b' for byte ,'l' of 32-bit)
 * If the destination is a block of memory, like (%rsi), the x depends on the source. We cannot acknowledge the infomation of size of (%rsi)
+* 一个立即数的具体大小（在计算机中被表示的值）取决于'x'
+> 若'x'='b' 则`2^32-1`就无法正确表示 若'x'='l'则可以正确表示
 
 ## movl, movq and movabsq
 * `movl` can set the **high-order 4 bytes** to `0x00 00 00 00`

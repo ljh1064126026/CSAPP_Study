@@ -5,3 +5,4 @@
 # Some tips
 * size_t: unsigned long
 * 汇编和离散群论编码中的奇偶校验位相反：前者是数学运算结果有**偶数个1**PF位置1 后者是bm中有**奇数个1**则第b_m+1（最低位的后1位）补1
+* word: 2 bytes
