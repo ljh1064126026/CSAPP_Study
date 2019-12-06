@@ -31,6 +31,10 @@
 > 执行带有`-g`使可执行文件附带调试信息的操作 会使可执行文件的体积变大  
 > `-g`在`as`中也可以使用  
 
+* `gdb -tui name`:开启tui窗口权限
+> `la a`=`layout asmble`:打开实时assemble window
+> `la r`=`layout regsters`:打开实时regs window
+
 ### 反汇编工具objdump使用入门
 > GNU反汇编器 objdump 在binutils包中
 
@@ -44,4 +48,16 @@
 * `gprof object_name > gprof.txt`:打开简档文件并将该文件重定向到`gprof.txt`文件中
 > 注意 不可直接打开`gmon.out`查看简档文件，需要通过可执行文件来打开简档文件
 
-* 
+### 查看relocatable object files
+> 注意little endian   
+* `gcc -c name.c`:得到relocatable object file不连接
+* `hexdump -C name.o`:得到二进制内容
+* `readefl name.o`:得到relocatable object file的全部信息
+* `readelf -h name.o`:得到elf header
+* `objdump -d name.o`:反汇编得到.text段
+* `objdump -s name.o`:.data
+* `objdump -h name.o`:.bss and .data
+* `readelf -S name.o`:section table
+* `readelf -s name.o`:.symtab
+* `nm name.o`:list the symbols defined in the symbol tab of the name.o
+
