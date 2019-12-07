@@ -7,6 +7,8 @@
 * `gcc -S source_name.c`:生成编译后的汇编文件，但不执行汇编
 * `gcc -g -o object_name object_name.c`:生成可执行文件的同时附带调试信息。必须有调试信息才能执行调试
 * `gcc -c source_name.c`:生成目标文件但是不链接，可用于objdump反汇编
+* `gcc -fno-common -o t t1.c t2.c`:若多个文件中有相同名字的global会报错
+* `gcc -Werror -o t t1.c`:将警告转换成报错
 
 ### binutils 工具包
 * `rpm -qa|grep binutils`:检查系统中是否安装`binutils`工具包
