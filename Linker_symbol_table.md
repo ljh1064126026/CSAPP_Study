@@ -8,6 +8,7 @@
 
 ### Local symbols
 * static C functions + static
+> The LOCAL in `.symtab` are not the local variables
 
 ### In .symtab
 * value:the offset from the beginning of the section where the object is defined
