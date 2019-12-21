@@ -25,8 +25,8 @@
 * COM:uninitialzed global variable(nonstatic) **are not yet allocated**
 
 #### The differences between COMMON and .bss
-1. COM:**uninitialized unstated global**
-2. .bss:**uninitialized stated and initialized to zero global and stated local**
+1. COM:**uninitialized nontated global**
+2. .bss:**uninitialized static and initialized to zero global and stated local**
 3. COM and .bss are not yet allocated before run time. The later one is just a **placeholder**
 4. .bss would be allocated and initialized to zero during run time.
 5. COM is just located in no more than **relocatable object file**, which means it would not exist in **executable object file**
