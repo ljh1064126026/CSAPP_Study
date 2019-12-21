@@ -51,10 +51,11 @@
 > 注意 不可直接打开`gmon.out`查看简档文件，需要通过可执行文件来打开简档文件
 
 ### 查看relocatable object files
-> 注意little endian   
+> 注意little endian  
+ 
 * `gcc -c name.c`:得到relocatable object file不连接
 * `hexdump -C name.o`:得到二进制内容
-* `readefl name.o`:得到relocatable object file的全部信息
+* `readefl -a name.o`:得到relocatable object file的全部信息
 * `readelf -h name.o`:得到elf header
 * `objdump -d name.o`:反汇编得到.text段
 * `objdump -s name.o`:.data
