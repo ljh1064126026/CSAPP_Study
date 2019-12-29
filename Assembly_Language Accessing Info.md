@@ -46,7 +46,8 @@ _start:
 
 * 为了便于理解 内存变址访问 `offset(base ,index ,scale_factor)`也可以理解为`base(offset ,index ,scale_factor)`
 * `offset(base ,index ,scale_factor)=*(offset+base+index*scale_factor)`
-> `lea`is an exception
+> `lea`is an exception  
+> `lea`的括号前面不能用寄存器 只能用立即数或变量（变量被识别为它的内存地址）
 
 ## The 'x' of movx
 * If the destination is a register, it must match the 'x' of movx(such as 'b' for byte ,'l' of 32-bit)
