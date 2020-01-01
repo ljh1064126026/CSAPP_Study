@@ -89,3 +89,4 @@ printf("%f\n", a);//Incorrect output
 > 精度的范围 < 可表示的大小范围  
 > double的f在23位之后的位表示的数值无法被float表示 因此会发生rounding  
 * `float,double -> int`：直接舍去小数点后的部分
+> WHY?

@@ -63,3 +63,10 @@ _start:
 * `movzbq source ,destination`:无符号数从1字节（byte b)扩展到8字节（quad q) **高位补0**
 * `movswl s ,d`:有符号数从2字节(w)扩展到4字节(l) **高位补符号位**
 > 特殊情况：`movzlq`不存在 用`movl`代替
+
+## 关于PC寄存器
+* 在本条语句执行过程及执行完毕时候 PC寄存器指向的都是本条语句之后的下一条语句 指向的语句尚未被执行
+![](/Users/administrator/Documents/CSAPP_Study/photo/截屏2020-01-01下午3.54.17.png)
+![](/Users/administrator/Documents/CSAPP_Study/photo/截屏2020-01-01下午4.02.01.png)
+
+> RIP寄存器不能被直接访问 例如：RIP寄存器的值不能被直接赋值给其它寄存器
